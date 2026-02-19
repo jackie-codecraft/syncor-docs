@@ -1,0 +1,27 @@
+/**
+ * Syncor Documentation — Custom CSS
+ * Primary brand color: #1a56db (update to match your final brand palette)
+ */
+
+:root {
+  --ifm-color-primary: #1a56db;
+  --ifm-color-primary-dark: #1549c4;
+  --ifm-color-primary-darker: #1342b8;
+  --ifm-color-primary-darkest: #0f3596;
+  --ifm-color-primary-light: #2d67e5;
+  --ifm-color-primary-lighter: #3a70e8;
+  --ifm-color-primary-lightest: #5a87ed;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #5a87ed;
+  --ifm-color-primary-dark: #3a70e8;
+  --ifm-color-primary-darker: #2d67e5;
+  --ifm-color-primary-darkest: #1a56db;
+  --ifm-color-primary-light: #7aa0f1;
+  --ifm-color-primary-lighter: #8fadf3;
+  --ifm-color-primary-lightest: #b3c8f8;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}

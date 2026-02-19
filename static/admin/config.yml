@@ -1,0 +1,86 @@
+backend:
+  name: github
+  repo: jackie-codecraft/syncor-docs
+  branch: main
+  # For local development: run `npx decap-server` in the project root
+  # and uncomment the next line:
+  # base_url: http://localhost:8081
+
+# Uncomment for local dev without GitHub OAuth:
+# local_backend: true
+
+media_folder: static/img/uploads
+public_folder: /img/uploads
+
+# ─── COLLECTIONS ─────────────────────────────────────────────────────────────
+
+collections:
+
+  # SECTIONS
+  # Creates _category_.json files that define Docusaurus sidebar sections.
+  # Path pattern: docs/{section-slug}/_category_
+  - name: sections
+    label: Sections
+    label_singular: Section
+    description: >
+      Sections are the top-level groupings in the documentation sidebar.
+      Create a section here before adding pages to it.
+    folder: docs
+    path: '{{slug}}/_category_'
+    create: true
+    format: json
+    summary: '{{label}}'
+    fields:
+      - name: label
+        label: Section Name
+        widget: string
+        hint: 'The name shown in the sidebar (e.g. "Placing Orders")'
+      - name: position
+        label: Sidebar Position
+        widget: number
+        default: 99
+        hint: 'Lower numbers appear first in the sidebar'
+      - name: description
+        label: Description (optional)
+        widget: text
+        required: false
+        hint: 'Optional short description for this section'
+
+  # DOCUMENTATION PAGES
+  # Creates .md files inside a section folder.
+  # The editor picks which section the page belongs to.
+  - name: docs
+    label: Documentation Pages
+    label_singular: Page
+    description: >
+      Individual documentation pages. Each page belongs to a section.
+      Use the Section Slug field to place the page in the right section folder.
+    folder: docs
+    path: '{{section}}/{{slug}}'
+    create: true
+    format: frontmatter
+    summary: '{{title}} ({{section}})'
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: section
+        label: Section Slug
+        widget: string
+        hint: >
+          The folder name of the section this page belongs to
+          (e.g. "procurement", "getting-started"). Must match an existing section.
+      - name: sidebar_position
+        label: Position within Section
+        widget: number
+        default: 1
+        hint: 'Lower numbers appear first within the section'
+      - name: description
+        label: Short Description (optional)
+        widget: text
+        required: false
+        hint: 'Shown in search results and link previews'
+      - name: body
+        label: Content
+        widget: markdown
+        hint: 'Write your documentation content here. Markdown is fully supported.'
