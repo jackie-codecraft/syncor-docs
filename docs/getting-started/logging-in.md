@@ -1,45 +1,90 @@
 ---
-title: Logging In
 sidebar_position: 2
-description: How to access Syncor and an overview of user roles and permissions.
+title: Logging In & Authentication
 ---
 
-# Logging In
+# Logging In & Authentication
 
-Syncor is accessed via your organisation's dedicated portal URL, typically in the format `https://yourcompany.syncor.io`. Your IT or procurement team will provide this address during onboarding.
+## Logging In
 
-## Signing In
+To access Syncor, navigate to your organization's unique URL:
 
-1. Open your browser and navigate to your Syncor portal URL.
-2. Enter your **work email address** and **password**. If your organisation uses Single Sign-On (SSO), click **Sign in with SSO** and authenticate via your identity provider (e.g. Microsoft Entra, Okta).
-3. If multi-factor authentication (MFA) is enabled, complete the MFA prompt.
-4. You will land on the **Dashboard**, showing your pending actions and recent activity.
+```
+https://yourcompany.syncor.com
+```
 
-:::tip Forgot your password?
-Click **Forgot password?** on the login screen. A reset link will be sent to your registered email address. If you do not receive it within a few minutes, check your spam folder or contact your administrator.
+![Login Page](/img/screenshots/login-page.png)
+
+### Steps to Log In
+
+1. Enter your **Email** address.
+2. Enter your **Password**.
+3. (Optional) Check **Remember me** to stay logged in on this device.
+4. Click **Sign In Here**.
+
+:::tip
+If you don't know your Syncor URL, contact your system administrator.
 :::
 
-## First-Time Login
+### Troubleshooting Login Issues
 
-If this is your first time logging in, you may be prompted to:
+- **"These credentials do not match our records"** — Double-check your email and password. Passwords are case-sensitive.
+- **Account locked** — After multiple failed attempts, your account may be temporarily locked. Wait a few minutes or contact your administrator.
+- **Forgotten password** — Click **"Forgot your password?"** below the password field.
 
-- Set a new password (if your administrator set a temporary one)
-- Review and accept the organisation's Acceptable Use Policy
-- Complete your profile (display name, department, default cost centre)
+---
 
-## User Roles
+## Resetting Your Password
 
-Your access within Syncor is determined by your assigned role. Roles are set by your administrator and can be changed at any time.
+![Forgot Password](/img/screenshots/forgot-password.png)
 
-| Role | Permissions |
-|---|---|
-| **Requester** | Create and view own purchase requests; browse catalogue |
-| **Approver** | All Requester permissions + approve/reject requests within delegated limits |
-| **Procurement Manager** | All Approver permissions + manage catalogue, suppliers, and approval rules |
-| **Administrator** | Full system access including user management and system settings |
+1. On the login page, click **"Forgot your password?"**
+2. Enter your **Email Address** and click **Submit**.
+3. Check your email for a 6-digit verification code from Syncor.
+4. Enter the **6-digit code** — the form auto-submits once all digits are entered.
+5. If you didn't receive the code, click **Resend**.
+6. On the **Set New Password** page, enter and confirm your new password.
+7. Click **Submit** — you'll be redirected to the login page.
 
-A user can hold multiple roles — for example, a department manager might be both a Requester (for their own purchases) and an Approver (for their team's requests).
+:::tip
+If you don't see the email, check your spam or junk folder.
+:::
 
-## Logging Out
+---
 
-Click your avatar or initials in the top-right corner and select **Sign out**. For security, Syncor will automatically log you out after a period of inactivity (configurable by your administrator, default 30 minutes).
+## Two-Factor Authentication at Login
+
+If 2FA is enabled on your account, you'll see an additional verification screen after entering your credentials.
+
+### Entering Your Authentication Code
+
+1. Open your authenticator app (Google Authenticator, Microsoft Authenticator, Authy, etc.).
+2. Find the entry for Syncor and note the current 6-digit code.
+3. Enter the code — the form auto-submits once all digits are entered.
+
+### Using a Recovery Code
+
+If you don't have access to your authenticator app:
+
+1. Click **"Use Recovery Code"** at the bottom of the 2FA screen.
+2. Enter one of your saved recovery codes.
+3. Click **Verify**.
+
+:::warning Important
+Each recovery code can only be used once. After using a recovery code, set up 2FA again from your profile settings and generate new recovery codes.
+:::
+
+---
+
+## Accepting Terms and Conditions
+
+When your organization updates its terms, you may be required to accept them before continuing.
+
+1. Click **Read Terms** to open the full terms dialog.
+2. Read through the terms and click **Close**.
+3. Check the **acceptance checkbox**.
+4. Click **Accept**.
+
+:::note
+You cannot proceed to the dashboard until you accept the terms. The Accept button is disabled until the checkbox is checked.
+:::
