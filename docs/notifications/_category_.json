@@ -1,1 +1,8 @@
-{"label":"Notifications","position":7,"link":{"type":"generated-index"}}
+{
+  "label": "Notifications",
+  "position": 7,
+  "link": {
+    "type": "generated-index"
+  },
+  "folder_name": "notifications"
+}

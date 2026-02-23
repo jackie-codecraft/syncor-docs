@@ -35,6 +35,13 @@ collections:
         label: Section Name
         widget: string
         hint: 'Shown as the sidebar heading (e.g. "Release Notes")'
+      - name: folder_name
+        label: Folder Name
+        widget: string
+        hint: >
+          Lowercase, hyphens only — must match the section folder name
+          (e.g. "release-notes"). This is used to link pages to sections.
+        pattern: ['^[a-z][a-z0-9-]*$', 'Lowercase letters and hyphens only, no spaces']
       - name: position
         label: Sidebar Position
         widget: number
@@ -72,7 +79,7 @@ collections:
         widget: relation
         collection: sections
         search_fields: ['label']
-        value_field: '{{slug}}'
+        value_field: folder_name
         display_fields: ['label']
         hint: >
           Pick which section this page belongs to. New sections created in

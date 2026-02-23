@@ -1,1 +1,8 @@
-{"label":"Budgets","position":9,"link":{"type":"generated-index"}}
+{
+  "label": "Budgets",
+  "position": 9,
+  "link": {
+    "type": "generated-index"
+  },
+  "folder_name": "budgets"
+}
