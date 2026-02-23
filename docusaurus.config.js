@@ -67,7 +67,7 @@ const config = {
         style: 'dark',
         logo: {
           alt: 'Syncor',
-          src: 'img/brand/syncor-logo-black.png',
+          src: 'img/brand/syncor-logo-white.png',
           srcDark: 'img/brand/syncor-logo-white.png',
           height: 28,
         },
