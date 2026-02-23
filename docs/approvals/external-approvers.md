@@ -1,4 +1,5 @@
 ---
+section: approvals
 sidebar_position: 2
 title: External Approver Review
 ---

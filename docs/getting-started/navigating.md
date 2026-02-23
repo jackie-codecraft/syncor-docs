@@ -1,4 +1,5 @@
 ---
+section: getting-started
 sidebar_position: 3
 title: Navigating the Interface
 ---

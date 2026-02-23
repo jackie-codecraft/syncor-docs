@@ -1,4 +1,5 @@
 ---
+section: catalogue
 sidebar_position: 2
 title: Product Listings & Filtering
 ---

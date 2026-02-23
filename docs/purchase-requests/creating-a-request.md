@@ -1,4 +1,5 @@
 ---
+section: purchase-requests
 sidebar_position: 2
 title: Creating & Managing a Request
 ---

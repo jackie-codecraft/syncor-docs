@@ -1,4 +1,5 @@
 ---
+section: catalogue
 sidebar_position: 1
 title: The Product Catalog
 ---
