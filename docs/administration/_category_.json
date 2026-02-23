@@ -1,8 +1,6 @@
 {
-  "position": 10,
   "label": "Administration",
-  "customProps": {
-    "folder_name": "system-administration"
-  },
-  "description": " General system administration"
+  "folder_name": "administration",
+  "position": 10,
+  "description": "General system administration"
 }
