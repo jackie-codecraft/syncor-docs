@@ -1,23 +1,203 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+/* ─── HERO ───────────────────────────────────────────────────────────────── */
 
-.heroBanner {
-  padding: 4rem 0;
+.hero {
+  background: linear-gradient(135deg, #09504a 0%, #0d9277 60%, #09504a 100%);
+  padding: 5rem 2rem 4.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+/* Subtle noise-grain overlay to match brand guide aesthetic */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Orange accent bar at the bottom of the hero */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b01, #ff9d01, #ff6b01);
+}
+
+.heroInner {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.heroLogo {
+  height: 48px;
+  width: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.3));
+}
+
+.heroTitle {
+  color: #ffffff !important;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.heroSubtitle {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.heroCta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  background-color: #ff6b01 !important;
+  border-color: #ff6b01 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.ctaPrimary:hover {
+  background-color: #e65f00 !important;
+  border-color: #e65f00 !important;
+  transform: translateY(-1px);
+}
+
+.ctaSecondary {
+  background-color: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.ctaSecondary:hover {
+  border-color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ─── MAIN CONTENT ───────────────────────────────────────────────────────── */
+
+.main {
+  padding: 4rem 0 5rem;
+}
+
+.sectionHeading {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  color: #09504a;
+  border-bottom: none !important;
+}
+
+[data-theme='dark'] .sectionHeading {
+  color: #0fb58d;
+}
+
+/* ─── SECTION CARDS ──────────────────────────────────────────────────────── */
+
+.sectionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 996px) {
+  .sectionGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.buttons {
+@media (max-width: 600px) {
+  .sectionGrid {
+    grid-template-columns: 1fr;
+  }
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+}
+
+.sectionCard {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  padding: 1.75rem 1.5rem;
+  border-radius: 12px;
+  border: 1.5px solid #e8e8e8;
+  background: #ffffff;
+  text-decoration: none !important;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  color: inherit !important;
+}
+
+.sectionCard:hover {
+  border-color: #ff6b01;
+  box-shadow: 0 4px 20px rgba(255, 107, 1, 0.12);
+  transform: translateY(-2px);
+  text-decoration: none !important;
+}
+
+[data-theme='dark'] .sectionCard {
+  background: #162322;
+  border-color: #243534;
+}
+
+[data-theme='dark'] .sectionCard:hover {
+  border-color: #ff8c33;
+  box-shadow: 0 4px 20px rgba(255, 107, 1, 0.2);
+}
+
+.sectionIcon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.sectionTitle {
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 0.5rem !important;
+  color: #09504a !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+[data-theme='dark'] .sectionTitle {
+  color: #0fb58d !important;
+}
+
+.sectionDescription {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.55;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+[data-theme='dark'] .sectionDescription {
+  color: #9ab5b3;
+}
+
+.sectionArrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ff6b01;
+  margin-top: auto;
 }
