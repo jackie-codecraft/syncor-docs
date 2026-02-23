@@ -1,27 +1,26 @@
 ---
-sidebar_position: 1
 title: Reviewing & Approving Requests
+sidebar_position: 1
 ---
-
 # Reviewing & Approving Requests
 
 ## The Approvals Page
 
-If you have approval permissions, **Approve** appears in your sidebar navigation. The page has two tabs:
+If you have been given approval permissions, **Approve** appears in your sidebar navigation. The page has two tabs:
 
-- **Pending Approvals** — Purchase requests waiting for your action
-- **Approval History** — Requests you've previously approved or rejected
+* **Pending Approvals** — Purchase requests waiting for your action
+* **Approval History** — Requests you've previously approved or rejected
 
 Click any row to open the full detail view.
 
----
+- - -
 
 ## Reviewing a Request
 
 Two action buttons appear at the top right of a pending request:
 
-- **Reject** (outline, red X icon)
-- **Approve** (green, check icon — shows an alert icon if there's a budget concern)
+* **Reject** (outline, red X icon)
+* **Approve** (green, check icon — shows an alert icon if there's a budget concern)
 
 ### What to Review
 
@@ -31,7 +30,7 @@ Two action buttons appear at the top right of a pending request:
 4. **Budget Tab** — Budget impact (see below)
 5. **Request History** — Check if this is a resubmission after a prior rejection
 
----
+- - -
 
 ## Budget Impact Assessment
 
@@ -39,29 +38,30 @@ If budgeting is enabled, a **Budget** tab appears when you're the current approv
 
 For each budget entity (Site, Contract):
 
-- **Status** — ✓ Within budget (green) or ⚠ Over budget (amber/red)
-- **Budget Used %** — Percentage of budget consumed
-- **Remaining / Over amount** — How much is left or exceeded
-- **Progress Bar** — Visual showing Committed, Other Pending, and This Order
-- **Breakdown Grid** — Detailed figures for all three components
+* **Status** — ✓ Within budget (green) or ⚠ Over budget (amber/red)
+* **Budget Used %** — Percentage of budget consumed
+* **Remaining / Over amount** — How much is left or exceeded
+* **Progress Bar** — Visual showing Committed, Other Pending, and This Order
+* **Breakdown Grid** — Detailed figures for all three components
 
 ### Budget Alerts
 
-| State | Description |
-|-------|-------------|
+| State               | Description                                                                 |
+| ------------------- | --------------------------------------------------------------------------- |
 | **Warning (amber)** | Exceeded warning threshold. Check acknowledgment checkbox before approving. |
-| **Block (red)** | Exceeded blocking threshold. Requires budget override permission. |
+| **Block (red)**     | Exceeded blocking threshold. Requires budget override permission.           |
 
----
+- - -
 
 ## Approving a Request
 
 1. Click the **Approve** button.
 2. The **Approval Modal** opens:
-   - Request summary (Site, Contract)
-   - Budget impact alert if applicable
-   - **Next Approver Preview** (if multi-level)
-   - Optional **Note** field
+
+   * Request summary (Site, Contract)
+   * Budget impact alert if applicable
+   * **Next Approver Preview** (if multi-level)
+   * Optional **Note** field
 3. If this is the **final approval**, the modal shows "Final Approval."
 4. Click **"Yes, Approve"** to confirm.
 
@@ -69,7 +69,7 @@ For each budget entity (Site, Contract):
 If budget warnings are present, check the acknowledgment checkbox before the Approve button becomes active.
 :::
 
----
+- - -
 
 ## Rejecting a Request
 
@@ -83,7 +83,7 @@ The requester will be notified and can view your reason in the Request History t
 Provide specific, actionable feedback so the requester knows exactly what to change.
 :::
 
----
+- - -
 
 ## Approval History & Level Overrides
 
@@ -95,10 +95,10 @@ The **Approval History** tab shows all requests you've previously acted on. Clic
 
 If you have level override permissions, the Approve button appears as a split button with a dropdown:
 
-| Option | Description |
-|--------|-------------|
-| **Approve** | Standard approval — passes to next level |
-| **Level Override** | Approves and skips to a higher level |
+| Option                | Description                                |
+| --------------------- | ------------------------------------------ |
+| **Approve**           | Standard approval — passes to next level   |
+| **Level Override**    | Approves and skips to a higher level       |
 | **Workflow Override** | Approves and completes the entire workflow |
 
 The **Next Approver Preview** updates based on your selection.
