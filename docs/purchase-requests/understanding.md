@@ -1,4 +1,5 @@
 ---
+section: purchase-requests
 sidebar_position: 1
 title: Understanding Purchase Requests
 ---

@@ -8,24 +8,21 @@ backend:
 media_folder: static/img/uploads
 public_folder: /img/uploads
 
-# ─── SHARED PAGE FIELDS ───────────────────────────────────────────────────────
-# Used by every documentation section collection below.
-
 # ─── COLLECTIONS ─────────────────────────────────────────────────────────────
 
 collections:
 
-  # ── SECTIONS ────────────────────────────────────────────────────────────────
-  # Creates _category_.json files that define the sidebar section labels/order.
-  # Step 1: Create a section here.
-  # Step 2: Ask Jackie to add a matching collection below so pages can be edited.
+  # ── SIDEBAR SECTIONS ─────────────────────────────────────────────────────────
+  # Manages the top-level groupings in the documentation sidebar.
+  # Create a section here — it will immediately appear as an option when
+  # creating or editing documentation pages below.
   - name: sections
     label: Sidebar Sections
     label_singular: Section
     description: >
-      Sections control the top-level groupings shown in the documentation
-      sidebar. Create a section here first, then add pages to it using
-      the matching section collection below.
+      Sections are the top-level groups in the documentation sidebar.
+      Create a section here first, then use "Documentation Pages" to add
+      pages to it. New sections appear instantly in the section dropdown.
     folder: docs
     path: '{{slug}}/_category_'
     slug: '{{fields.label | slug}}'
@@ -37,256 +34,59 @@ collections:
       - name: label
         label: Section Name
         widget: string
-        hint: 'Shown as the sidebar heading (e.g. "Placing Orders")'
+        hint: 'Shown as the sidebar heading (e.g. "Release Notes")'
       - name: position
         label: Sidebar Position
         widget: number
         default: 99
-        hint: 'Lower numbers appear first. Existing sections use positions 1–9.'
+        hint: 'Lower numbers appear first. Current sections use positions 1–10.'
       - name: description
         label: Description (optional)
         widget: text
         required: false
-        hint: 'Optional. Used on the generated section index page.'
+        hint: 'Optional. Shown on the generated section index page.'
 
-  # ── GETTING STARTED ──────────────────────────────────────────────────────────
-  - name: getting_started
-    label: Getting Started
+  # ── DOCUMENTATION PAGES ───────────────────────────────────────────────────────
+  # All documentation pages, across all sections.
+  # Pick a section from the dropdown — the page is saved to the right folder
+  # automatically. New sections created above appear here immediately.
+  - name: docs
+    label: Documentation Pages
     label_singular: Page
-    folder: docs/getting-started
+    description: >
+      All documentation pages. Pick a section from the dropdown to place
+      the page in the right part of the sidebar. You can create, edit,
+      and delete pages here across all sections.
+    folder: docs
+    path: '{{fields.section}}/{{slug}}'
     create: true
     format: frontmatter
-    summary: '{{title}}'
+    summary: '{{title}} — {{section}}'
+    identifier_field: title
     fields:
       - name: title
         label: Title
         widget: string
+      - name: section
+        label: Section
+        widget: relation
+        collection: sections
+        search_fields: ['label']
+        value_field: '{{slug}}'
+        display_fields: ['label']
+        hint: >
+          Pick which section this page belongs to. New sections created in
+          "Sidebar Sections" appear here automatically.
       - name: sidebar_position
-        label: Position in Section
+        label: Position within Section
         widget: number
         default: 99
-        hint: 'Lower numbers appear first within this section.'
+        hint: 'Lower numbers appear first within the section.'
       - name: description
         label: Short Description (optional)
         widget: text
         required: false
         hint: 'Shown in search results and link previews.'
-      - name: body
-        label: Content
-        widget: markdown
-
-  # ── DASHBOARD ────────────────────────────────────────────────────────────────
-  - name: dashboard
-    label: Dashboard
-    label_singular: Page
-    folder: docs/dashboard
-    create: true
-    format: frontmatter
-    summary: '{{title}}'
-    fields:
-      - name: title
-        label: Title
-        widget: string
-      - name: sidebar_position
-        label: Position in Section
-        widget: number
-        default: 99
-      - name: description
-        label: Short Description (optional)
-        widget: text
-        required: false
-      - name: body
-        label: Content
-        widget: markdown
-
-  # ── CATALOGUE ────────────────────────────────────────────────────────────────
-  - name: catalogue
-    label: Catalogue
-    label_singular: Page
-    folder: docs/catalogue
-    create: true
-    format: frontmatter
-    summary: '{{title}}'
-    fields:
-      - name: title
-        label: Title
-        widget: string
-      - name: sidebar_position
-        label: Position in Section
-        widget: number
-        default: 99
-      - name: description
-        label: Short Description (optional)
-        widget: text
-        required: false
-      - name: body
-        label: Content
-        widget: markdown
-
-  # ── PURCHASE REQUESTS ────────────────────────────────────────────────────────
-  - name: purchase_requests
-    label: Purchase Requests
-    label_singular: Page
-    folder: docs/purchase-requests
-    create: true
-    format: frontmatter
-    summary: '{{title}}'
-    fields:
-      - name: title
-        label: Title
-        widget: string
-      - name: sidebar_position
-        label: Position in Section
-        widget: number
-        default: 99
-      - name: description
-        label: Short Description (optional)
-        widget: text
-        required: false
-      - name: body
-        label: Content
-        widget: markdown
-
-  # ── APPROVALS ────────────────────────────────────────────────────────────────
-  - name: approvals
-    label: Approvals
-    label_singular: Page
-    folder: docs/approvals
-    create: true
-    format: frontmatter
-    summary: '{{title}}'
-    fields:
-      - name: title
-        label: Title
-        widget: string
-      - name: sidebar_position
-        label: Position in Section
-        widget: number
-        default: 99
-      - name: description
-        label: Short Description (optional)
-        widget: text
-        required: false
-      - name: body
-        label: Content
-        widget: markdown
-
-  # ── SOURCING ─────────────────────────────────────────────────────────────────
-  - name: sourcing
-    label: Sourcing Requests
-    label_singular: Page
-    folder: docs/sourcing
-    create: true
-    format: frontmatter
-    summary: '{{title}}'
-    fields:
-      - name: title
-        label: Title
-        widget: string
-      - name: sidebar_position
-        label: Position in Section
-        widget: number
-        default: 99
-      - name: description
-        label: Short Description (optional)
-        widget: text
-        required: false
-      - name: body
-        label: Content
-        widget: markdown
-
-  # ── NOTIFICATIONS ────────────────────────────────────────────────────────────
-  - name: notifications
-    label: Notifications
-    label_singular: Page
-    folder: docs/notifications
-    create: true
-    format: frontmatter
-    summary: '{{title}}'
-    fields:
-      - name: title
-        label: Title
-        widget: string
-      - name: sidebar_position
-        label: Position in Section
-        widget: number
-        default: 99
-      - name: description
-        label: Short Description (optional)
-        widget: text
-        required: false
-      - name: body
-        label: Content
-        widget: markdown
-
-  # ── PROFILE ──────────────────────────────────────────────────────────────────
-  - name: profile
-    label: Your Profile
-    label_singular: Page
-    folder: docs/profile
-    create: true
-    format: frontmatter
-    summary: '{{title}}'
-    fields:
-      - name: title
-        label: Title
-        widget: string
-      - name: sidebar_position
-        label: Position in Section
-        widget: number
-        default: 99
-      - name: description
-        label: Short Description (optional)
-        widget: text
-        required: false
-      - name: body
-        label: Content
-        widget: markdown
-
-  # ── BUDGETS ──────────────────────────────────────────────────────────────────
-  - name: budgets
-    label: Budgets
-    label_singular: Page
-    folder: docs/budgets
-    create: true
-    format: frontmatter
-    summary: '{{title}}'
-    fields:
-      - name: title
-        label: Title
-        widget: string
-      - name: sidebar_position
-        label: Position in Section
-        widget: number
-        default: 99
-      - name: description
-        label: Short Description (optional)
-        widget: text
-        required: false
-      - name: body
-        label: Content
-        widget: markdown
-
-  # ── ADMINISTRATION ───────────────────────────────────────────────────────────
-  - name: administration
-    label: Administration
-    label_singular: Page
-    folder: docs/administration
-    create: true
-    format: frontmatter
-    summary: '{{title}}'
-    fields:
-      - name: title
-        label: Title
-        widget: string
-      - name: sidebar_position
-        label: Position in Section
-        widget: number
-        default: 99
-      - name: description
-        label: Short Description (optional)
-        widget: text
-        required: false
       - name: body
         label: Content
         widget: markdown

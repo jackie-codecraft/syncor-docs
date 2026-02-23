@@ -1,4 +1,5 @@
 ---
+section: sourcing
 sidebar_position: 1
 title: Sourcing Requests
 ---

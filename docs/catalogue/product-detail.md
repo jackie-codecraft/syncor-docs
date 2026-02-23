@@ -1,4 +1,5 @@
 ---
+section: catalogue
 sidebar_position: 3
 title: Product Detail & Adding to a Request
 ---

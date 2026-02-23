@@ -1,4 +1,5 @@
 ---
+section: getting-started
 sidebar_position: 2
 title: Logging In & Authentication
 ---

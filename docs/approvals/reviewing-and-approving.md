@@ -1,5 +1,6 @@
 ---
 title: Reviewing & Approving Requests
+section: approvals
 sidebar_position: 1
 ---
 # Reviewing & Approving Requests

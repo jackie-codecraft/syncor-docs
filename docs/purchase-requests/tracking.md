@@ -1,4 +1,5 @@
 ---
+section: purchase-requests
 sidebar_position: 3
 title: Tracking Your Requests
 ---

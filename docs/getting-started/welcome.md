@@ -1,4 +1,5 @@
 ---
+section: getting-started
 sidebar_position: 1
 title: Welcome to Syncor
 ---
