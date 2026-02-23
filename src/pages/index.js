@@ -46,19 +46,19 @@ const sections = [
     icon: '🔔',
     title: 'Notifications',
     description: 'Stay on top of updates, approvals, and activity across your account.',
-    to: '/docs/notifications/notifications',
+    to: '/docs/notifications/',
   },
   {
     icon: '👤',
     title: 'Profile & Settings',
     description: 'Manage your account, preferences, and security settings.',
-    to: '/docs/profile/profile',
+    to: '/docs/profile/',
   },
   {
     icon: '💰',
     title: 'Budgets',
     description: 'Track spend, monitor budget limits, and understand cost allocation.',
-    to: '/docs/budgets/budgets',
+    to: '/docs/budgets/',
   },
 ];
 
