@@ -16,6 +16,10 @@ collections:
   # Manages the top-level groupings in the documentation sidebar.
   # Create a section here — it will immediately appear as an option when
   # creating or editing documentation pages below.
+  #
+  # NOTE: Section data is stored in data/sections/ (outside docs/).
+  # When adding a brand-new section, a developer must also create
+  # docs/<folder_name>/_category_.json in the repo to set the sidebar label.
   - name: sections
     label: Sidebar Sections
     label_singular: Section
@@ -23,8 +27,7 @@ collections:
       Sections are the top-level groups in the documentation sidebar.
       Create a section here first, then use "Documentation Pages" to add
       pages to it. New sections appear instantly in the section dropdown.
-    folder: docs
-    path: '{{slug}}/_category_'
+    folder: data/sections
     slug: '{{fields.folder_name}}'
     identifier_field: label
     create: true
@@ -40,18 +43,13 @@ collections:
         widget: string
         hint: >
           Lowercase letters and hyphens only (e.g. "release-notes"). Must be unique.
-          This becomes the folder in the repo — do not change after creating pages.
+          This determines where pages are saved in the repo — do not change after creating pages.
         pattern: ['^[a-z][a-z0-9-]*$', 'Lowercase letters and hyphens only, no spaces']
       - name: position
         label: Sidebar Position
         widget: number
         default: 99
         hint: 'Lower numbers appear first. Current sections use positions 1–10.'
-      - name: description
-        label: Description (optional)
-        widget: text
-        required: false
-        hint: 'Optional. Shown on the generated section index page.'
 
   # ── DOCUMENTATION PAGES ───────────────────────────────────────────────────────
   # All documentation pages, across all sections.

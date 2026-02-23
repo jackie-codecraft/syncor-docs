@@ -1,6 +1,5 @@
 {
   "label": "Browsing Products",
-  "folder_name": "catalogue",
   "position": 3,
   "link": {
     "type": "generated-index"
