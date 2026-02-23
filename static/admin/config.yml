@@ -28,6 +28,8 @@ collections:
       the matching section collection below.
     folder: docs
     path: '{{slug}}/_category_'
+    slug: '{{fields.label | slug}}'
+    identifier_field: label
     create: true
     format: json
     summary: '{{label}} (position {{position}})'
@@ -246,6 +248,30 @@ collections:
     label: Budgets
     label_singular: Page
     folder: docs/budgets
+    create: true
+    format: frontmatter
+    summary: '{{title}}'
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: sidebar_position
+        label: Position in Section
+        widget: number
+        default: 99
+      - name: description
+        label: Short Description (optional)
+        widget: text
+        required: false
+      - name: body
+        label: Content
+        widget: markdown
+
+  # ── ADMINISTRATION ───────────────────────────────────────────────────────────
+  - name: administration
+    label: Administration
+    label_singular: Page
+    folder: docs/administration
     create: true
     format: frontmatter
     summary: '{{title}}'
