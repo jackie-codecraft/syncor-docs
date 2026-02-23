@@ -4,5 +4,7 @@
   "link": {
     "type": "generated-index"
   },
-  "folder_name": "budgets"
+  "customProps": {
+    "folder_name": "budgets"
+  }
 }

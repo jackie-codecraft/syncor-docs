@@ -4,5 +4,7 @@
   "link": {
     "type": "generated-index"
   },
-  "folder_name": "sourcing"
+  "customProps": {
+    "folder_name": "sourcing"
+  }
 }
