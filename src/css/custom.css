@@ -1,27 +1,227 @@
 /**
- * Syncor Documentation — Custom CSS
- * Primary brand color: #1a56db (update to match your final brand palette)
+ * Syncor Documentation — Brand CSS
+ * Primary: #FF6B01 (Flush Orange)
+ * Accent: #09504A (Swamp Mausoleum), #0D9277 (Holly Green), #0FB58D (Green Teal)
+ * Fonts: Axiforma (primary), system-fallback
  */
 
-:root {
-  --ifm-color-primary: #1a56db;
-  --ifm-color-primary-dark: #1549c4;
-  --ifm-color-primary-darker: #1342b8;
-  --ifm-color-primary-darkest: #0f3596;
-  --ifm-color-primary-light: #2d67e5;
-  --ifm-color-primary-lighter: #3a70e8;
-  --ifm-color-primary-lightest: #5a87ed;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+/* ─── FONTS ──────────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'Axiforma';
+  src: url('/fonts/axiforma-book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: 'Axiforma';
+  src: url('/fonts/axiforma-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Axiforma';
+  src: url('/fonts/axiforma-extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Axiforma';
+  src: url('/fonts/axiforma-heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── LIGHT THEME ────────────────────────────────────────────────────────── */
+
+:root {
+  /* Brand orange scale */
+  --ifm-color-primary: #ff6b01;
+  --ifm-color-primary-dark: #e65f00;
+  --ifm-color-primary-darker: #d95900;
+  --ifm-color-primary-darkest: #b34900;
+  --ifm-color-primary-light: #ff7a1a;
+  --ifm-color-primary-lighter: #ff872e;
+  --ifm-color-primary-lightest: #ffa05a;
+
+  /* Syncor brand palette */
+  --syncor-orange: #ff6b01;
+  --syncor-orange-mid: #fe8204;
+  --syncor-orange-light: #ff9d01;
+  --syncor-teal-dark: #09504a;
+  --syncor-teal-mid: #0d9277;
+  --syncor-teal-light: #0fb58d;
+  --syncor-black: #000000;
+  --syncor-off-white: #f2f2f2;
+
+  /* Typography */
+  --ifm-font-family-base: 'Axiforma', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ifm-heading-font-family: 'Axiforma', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ifm-font-weight-bold: 700;
+
+  /* Code */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 107, 1, 0.08);
+
+  /* Navbar */
+  --ifm-navbar-background-color: #09504a;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: #ff9d01;
+  --ifm-navbar-shadow: 0 2px 12px rgba(9, 80, 74, 0.3);
+
+  /* Footer */
+  --ifm-footer-background-color: #09504a;
+  --ifm-footer-color: #e0f0ee;
+  --ifm-footer-link-color: #0fb58d;
+  --ifm-footer-link-hover-color: #ff6b01;
+
+  /* Sidebar */
+  --ifm-menu-link-sublist-icon-filter: invert(0);
+
+  /* Buttons */
+  --ifm-button-border-radius: 6px;
+}
+
+/* ─── DARK THEME ─────────────────────────────────────────────────────────── */
+
 [data-theme='dark'] {
-  --ifm-color-primary: #5a87ed;
-  --ifm-color-primary-dark: #3a70e8;
-  --ifm-color-primary-darker: #2d67e5;
-  --ifm-color-primary-darkest: #1a56db;
-  --ifm-color-primary-light: #7aa0f1;
-  --ifm-color-primary-lighter: #8fadf3;
-  --ifm-color-primary-lightest: #b3c8f8;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #ff8c33;
+  --ifm-color-primary-dark: #ff7a1a;
+  --ifm-color-primary-darker: #ff6b01;
+  --ifm-color-primary-darkest: #e65f00;
+  --ifm-color-primary-light: #ff9d4d;
+  --ifm-color-primary-lighter: #ffae66;
+  --ifm-color-primary-lightest: #ffcb99;
+
+  --ifm-navbar-background-color: #0a1a19;
+  --ifm-background-color: #111b1a;
+  --ifm-background-surface-color: #162322;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 107, 1, 0.15);
+}
+
+/* ─── NAVBAR ─────────────────────────────────────────────────────────────── */
+
+.navbar {
+  background-color: var(--syncor-teal-dark);
+  border-bottom: 2px solid var(--syncor-orange);
+}
+
+.navbar__logo img {
+  height: 28px;
+  width: auto;
+}
+
+.navbar__title {
+  color: #ffffff !important;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.navbar__link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--syncor-orange-light) !important;
+}
+
+/* ─── SIDEBAR ────────────────────────────────────────────────────────────── */
+
+.menu__link--active {
+  color: var(--syncor-orange) !important;
+  font-weight: 700;
+}
+
+.menu__link:hover {
+  color: var(--syncor-teal-mid);
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────────────────────── */
+
+.footer {
+  background-color: var(--syncor-teal-dark) !important;
+}
+
+.footer__title {
+  color: #ffffff !important;
+  font-weight: 800;
+}
+
+/* ─── HEADINGS ───────────────────────────────────────────────────────────── */
+
+h1 {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  border-bottom: 2px solid var(--syncor-orange);
+  padding-bottom: 0.4rem;
+}
+
+h3 {
+  font-weight: 700;
+  color: var(--syncor-teal-dark);
+}
+
+[data-theme='dark'] h3 {
+  color: var(--syncor-teal-light);
+}
+
+/* ─── ADMONITIONS ────────────────────────────────────────────────────────── */
+
+.alert--info {
+  --ifm-alert-border-color: var(--syncor-teal-mid);
+}
+
+.alert--warning {
+  --ifm-alert-border-color: var(--syncor-orange);
+}
+
+.alert--tip {
+  --ifm-alert-border-color: var(--syncor-teal-light);
+}
+
+/* ─── BUTTONS ────────────────────────────────────────────────────────────── */
+
+.button--primary {
+  background-color: var(--syncor-orange);
+  border-color: var(--syncor-orange);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.button--primary:hover {
+  background-color: var(--syncor-orange-mid);
+  border-color: var(--syncor-orange-mid);
+}
+
+/* ─── BREADCRUMBS ────────────────────────────────────────────────────────── */
+
+.breadcrumbs__link {
+  color: var(--syncor-teal-mid);
+}
+
+/* ─── SEARCH ─────────────────────────────────────────────────────────────── */
+
+.navbar__search-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }

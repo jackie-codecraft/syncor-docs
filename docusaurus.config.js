@@ -63,21 +63,24 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Syncor Docs',
+        title: '',
+        style: 'dark',
         logo: {
-          alt: 'Syncor Logo',
-          src: 'img/logo.svg',
+          alt: 'Syncor',
+          src: 'img/brand/syncor-logo-white.png',
+          srcDark: 'img/brand/syncor-logo-white.png',
+          height: 28,
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'docs',
             position: 'left',
-            label: 'Docs',
+            label: 'Documentation',
           },
           {
-            href: 'https://github.com/jackie-codecraft/syncor-docs',
-            label: 'GitHub',
+            href: 'https://syncor.io',
+            label: 'Go to Syncor',
             position: 'right',
           },
         ],
@@ -88,31 +91,22 @@ const config = {
           {
             title: 'Documentation',
             items: [
-              {
-                label: 'Getting Started',
-                to: '/docs/getting-started/intro',
-              },
-              {
-                label: 'Procurement',
-                to: '/docs/procurement/placing-orders',
-              },
+              { label: 'Getting Started', to: '/docs/getting-started/welcome' },
+              { label: 'Purchase Requests', to: '/docs/purchase-requests/understanding' },
+              { label: 'Approvals', to: '/docs/approvals/reviewing-and-approving' },
+              { label: 'Catalogue', to: '/docs/catalogue/product-catalog' },
             ],
           },
           {
             title: 'More',
             items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/jackie-codecraft/syncor-docs',
-              },
-              {
-                label: 'Content Manager',
-                href: '/admin',
-              },
+              { label: 'Syncor', href: 'https://syncor.io' },
+              { label: 'ProcureNet', href: 'https://procurenet.com.sa' },
+              { label: 'Content Manager', href: '/admin' },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Syncor. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} ProcureNet. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,
