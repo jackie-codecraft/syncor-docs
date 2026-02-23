@@ -1,12 +1,8 @@
 backend:
-  name: github
-  repo: jackie-codecraft/syncor-docs
+  name: git-gateway
   branch: main
-  # For local development: run `npx decap-server` in the project root
-  # and uncomment the next line:
-  # base_url: http://localhost:8081
 
-# Uncomment for local dev without GitHub OAuth:
+# For local development: run `npx decap-server` and set local_backend: true
 # local_backend: true
 
 media_folder: static/img/uploads
