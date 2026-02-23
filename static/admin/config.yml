@@ -8,60 +8,142 @@ backend:
 media_folder: static/img/uploads
 public_folder: /img/uploads
 
+# ─── PAGE FIELDS ─────────────────────────────────────────────────────────────
+# Shared field definitions (YAML anchors)
+
 # ─── COLLECTIONS ─────────────────────────────────────────────────────────────
+# Each section is its own collection. The folder IS the section — no path
+# templates needed. To add a new section, add a new collection here and
+# create docs/<folder>/_category_.json in the repo.
 
 collections:
 
-  # ── DOCUMENTATION PAGES ───────────────────────────────────────────────────────
-  # All documentation pages, across all sections.
-  # Pick a section from the dropdown — the page is saved to the right folder
-  # automatically.
-  #
-  # ADDING A NEW SECTION: add a new option to the section field below, then
-  # create docs/<folder_name>/_category_.json in the repo.
-  - name: docs
-    label: Documentation Pages
+  - name: getting_started
+    label: "Getting Started"
     label_singular: Page
-    description: >
-      All documentation pages. Pick a section from the dropdown to place
-      the page in the right part of the sidebar.
-    folder: docs
-    path: '{{fields.section}}/{{slug}}'
+    folder: docs/getting-started
     create: true
     format: frontmatter
-    summary: '{{title}} — {{section}}'
-    identifier_field: title
+    summary: '{{title}}'
     fields:
-      - name: title
-        label: Title
-        widget: string
-      - name: section
-        label: Section
-        widget: select
-        options:
-          - { label: "Getting Started",   value: "getting-started" }
-          - { label: "Your Dashboard",    value: "dashboard" }
-          - { label: "Browsing Products", value: "catalogue" }
-          - { label: "Purchase Requests", value: "purchase-requests" }
-          - { label: "Approvals",         value: "approvals" }
-          - { label: "Sourcing Requests", value: "sourcing" }
-          - { label: "Notifications",     value: "notifications" }
-          - { label: "Your Profile",      value: "profile" }
-          - { label: "Budgets",           value: "budgets" }
-          - { label: "Administration",    value: "administration" }
-        hint: >
-          Pick which section this page belongs to.
-          To add a new section, contact the site developer.
-      - name: sidebar_position
-        label: Position within Section
-        widget: number
-        default: 99
-        hint: 'Lower numbers appear first within the section.'
-      - name: description
-        label: Short Description (optional)
-        widget: text
-        required: false
-        hint: 'Shown in search results and link previews.'
-      - name: body
-        label: Content
-        widget: markdown
+      - { name: title, label: Title, widget: string }
+      - { name: sidebar_position, label: "Position within Section", widget: number, default: 99, hint: "Lower numbers appear first." }
+      - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
+      - { name: body, label: Content, widget: markdown }
+
+  - name: dashboard
+    label: "Your Dashboard"
+    label_singular: Page
+    folder: docs/dashboard
+    create: true
+    format: frontmatter
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: sidebar_position, label: "Position within Section", widget: number, default: 99, hint: "Lower numbers appear first." }
+      - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
+      - { name: body, label: Content, widget: markdown }
+
+  - name: catalogue
+    label: "Browsing Products"
+    label_singular: Page
+    folder: docs/catalogue
+    create: true
+    format: frontmatter
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: sidebar_position, label: "Position within Section", widget: number, default: 99, hint: "Lower numbers appear first." }
+      - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
+      - { name: body, label: Content, widget: markdown }
+
+  - name: purchase_requests
+    label: "Purchase Requests"
+    label_singular: Page
+    folder: docs/purchase-requests
+    create: true
+    format: frontmatter
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: sidebar_position, label: "Position within Section", widget: number, default: 99, hint: "Lower numbers appear first." }
+      - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
+      - { name: body, label: Content, widget: markdown }
+
+  - name: approvals
+    label: "Approvals"
+    label_singular: Page
+    folder: docs/approvals
+    create: true
+    format: frontmatter
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: sidebar_position, label: "Position within Section", widget: number, default: 99, hint: "Lower numbers appear first." }
+      - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
+      - { name: body, label: Content, widget: markdown }
+
+  - name: sourcing
+    label: "Sourcing Requests"
+    label_singular: Page
+    folder: docs/sourcing
+    create: true
+    format: frontmatter
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: sidebar_position, label: "Position within Section", widget: number, default: 99, hint: "Lower numbers appear first." }
+      - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
+      - { name: body, label: Content, widget: markdown }
+
+  - name: notifications
+    label: "Notifications"
+    label_singular: Page
+    folder: docs/notifications
+    create: true
+    format: frontmatter
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: sidebar_position, label: "Position within Section", widget: number, default: 99, hint: "Lower numbers appear first." }
+      - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
+      - { name: body, label: Content, widget: markdown }
+
+  - name: profile
+    label: "Your Profile"
+    label_singular: Page
+    folder: docs/profile
+    create: true
+    format: frontmatter
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: sidebar_position, label: "Position within Section", widget: number, default: 99, hint: "Lower numbers appear first." }
+      - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
+      - { name: body, label: Content, widget: markdown }
+
+  - name: budgets
+    label: "Budgets"
+    label_singular: Page
+    folder: docs/budgets
+    create: true
+    format: frontmatter
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: sidebar_position, label: "Position within Section", widget: number, default: 99, hint: "Lower numbers appear first." }
+      - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
+      - { name: body, label: Content, widget: markdown }
+
+  - name: administration
+    label: "Administration"
+    label_singular: Page
+    folder: docs/administration
+    create: true
+    format: frontmatter
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: sidebar_position, label: "Position within Section", widget: number, default: 99, hint: "Lower numbers appear first." }
+      - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
+      - { name: body, label: Content, widget: markdown }
