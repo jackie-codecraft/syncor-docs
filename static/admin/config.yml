@@ -35,6 +35,18 @@ collections:
         label: Section Name
         widget: string
         hint: 'Shown as the sidebar heading (e.g. "Release Notes")'
+      - name: customProps
+        label: CMS Settings
+        widget: object
+        summary: 'Folder: {{fields.folder_name}}'
+        fields:
+          - name: folder_name
+            label: Folder Name
+            widget: string
+            hint: >
+              Lowercase, hyphens only (e.g. "release-notes"). Must be unique.
+              This links pages to the section — do not change after creating.
+            pattern: ['^[a-z][a-z0-9-]*$', 'Lowercase letters and hyphens only, no spaces']
       - name: position
         label: Sidebar Position
         widget: number
@@ -72,7 +84,7 @@ collections:
         widget: relation
         collection: sections
         search_fields: ['label']
-        value_field: '{{slug}}'
+        value_field: 'customProps.folder_name'
         display_fields: ['label']
         hint: >
           Pick which section this page belongs to. New sections created in

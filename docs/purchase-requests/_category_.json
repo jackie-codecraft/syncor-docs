@@ -1,1 +1,10 @@
-{"label":"Purchase Requests","position":4,"link":{"type":"generated-index"}}
+{
+  "label": "Purchase Requests",
+  "position": 4,
+  "link": {
+    "type": "generated-index"
+  },
+  "customProps": {
+    "folder_name": "purchase-requests"
+  }
+}

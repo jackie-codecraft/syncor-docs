@@ -1,1 +1,10 @@
-{"label":"Browsing Products","position":3,"link":{"type":"generated-index"}}
+{
+  "label": "Browsing Products",
+  "position": 3,
+  "link": {
+    "type": "generated-index"
+  },
+  "customProps": {
+    "folder_name": "catalogue"
+  }
+}

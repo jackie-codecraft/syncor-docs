@@ -1,1 +1,10 @@
-{"label":"Approvals","position":5,"link":{"type":"generated-index"}}
+{
+  "label": "Approvals",
+  "position": 5,
+  "link": {
+    "type": "generated-index"
+  },
+  "customProps": {
+    "folder_name": "approvals"
+  }
+}

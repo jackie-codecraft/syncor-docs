@@ -1,1 +1,10 @@
-{"label":"Your Profile","position":8,"link":{"type":"generated-index"}}
+{
+  "label": "Your Profile",
+  "position": 8,
+  "link": {
+    "type": "generated-index"
+  },
+  "customProps": {
+    "folder_name": "profile"
+  }
+}
