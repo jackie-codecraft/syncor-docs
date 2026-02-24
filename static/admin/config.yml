@@ -135,19 +135,6 @@ collections:
       - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
       - { name: body, label: Content, widget: markdown }
 
-  - name: support
-    label: "Support"
-    label_singular: Page
-    folder: docs/support
-    create: true
-    format: frontmatter
-    summary: '{{title}}'
-    fields:
-      - { name: title, label: Title, widget: string }
-      - { name: sidebar_position, label: "Position within Section", widget: number, default: 99, hint: "Lower numbers appear first." }
-      - { name: description, label: "Short Description (optional)", widget: text, required: false, hint: "Shown in search results and link previews." }
-      - { name: body, label: Content, widget: markdown }
-
   - name: administration
     label: "Administration"
     label_singular: Page

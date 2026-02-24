@@ -79,6 +79,11 @@ const config = {
             label: 'Documentation',
           },
           {
+            to: '/support',
+            label: 'Support',
+            position: 'left',
+          },
+          {
             href: 'https://syncor.io',
             label: 'Go to Syncor',
             position: 'right',
